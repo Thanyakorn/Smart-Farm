@@ -36,7 +36,7 @@ void loop(){
   outputValue = map(Moisture, 0, 1023, 100, 0);
 
   
-  if (outputValue <= 40) {         //ตั้งค่า % ที่ต้องการจะรดน้ำต้นไม้
+  if (outputValue <= 50) {         //ตั้งค่า % ที่ต้องการจะรดน้ำต้นไม้
     digitalWrite(relay, HIGH);
   }
 
