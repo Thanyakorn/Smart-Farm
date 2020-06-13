@@ -80,6 +80,6 @@ void loop(){
   oled.println("temperature =");   //=ชื่ออณุหภูมิ
 
   oled.display();
-  delay(20000);
+  delay(10000);
   
 }
