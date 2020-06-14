@@ -1,16 +1,13 @@
-void setup(){
-pinMode(13, OUTPUT);
-
-
-}
-
-void loop(){
-    digitalWrite(13, HIGH);
-    delay(1000);
-    digitalWrite(13, LOW);
-    delay(1000);
-
-
-
-
+int relay = 13;
+void setup() { 
+    
+    pinMode(relay, OUTPUT); 
+    
+    }
+void loop() {
+    
+  digitalWrite(relay, HIGH);
+  delay(1000);
+  digitalWrite(relay, LOW);
+  delay(1000);
 }
