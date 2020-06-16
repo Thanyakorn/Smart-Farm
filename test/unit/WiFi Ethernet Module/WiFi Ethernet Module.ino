@@ -1,33 +1,37 @@
-
 #define BLYNK_PRINT Serial
+#include <ESP8266_Lib.h>
+#include <BlynkSimpleShieldEsp8266.h>
 
-#include <ESP8266WiFi.h>
-#include <BlynkSimpleEsp8266.h>
-#include <SimpleTimer.h>
+char auth[] = "4KEQt6TstCkNDUeNPmI8Z834CSjNzlPc";
 
-SimpleTimer timer;
+char ssid[] = "Thanyakorn_3BB";
+char pass[] = "0962539503";
 
-char auth[] = "b43150e095a142c7865e3c9cccd52777";
 
-char ssid[] = "Thanyakorn";
-char pass[] = "1234567890";
 
-BLYNK_CONNECTED() {
-    Blynk.syncAll();
-}
+#include <SoftwareSerial.h>
+SoftwareSerial EspSerial(3, 2); // RX, TX
 
-void setup()
-{
-  
+#define ESP8266_BAUD 38400
+ESP8266 wifi(&EspSerial);
+
+WidgetTerminal Terminal(V0);
+
+void setup() {
   Serial.begin(9600);
 
-  Blynk.begin(auth, ssid, pass);
+  EspSerial.begin(ESP8266_BAUD);
+  delay(10);
 
+  Blynk.begin(auth, wifi, ssid, pass);
+
+  Terminal.clear();
+  Terminal.println("Wifi Connected");
+  Terminal.flush();
 }
 
-void loop()
-{
+int i = 0;
+
+void loop() {
   Blynk.run();
-  timer.run();
 }
-
