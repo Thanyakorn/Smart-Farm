@@ -3,16 +3,13 @@
 #include <BlynkSimpleShieldEsp8266.h>
 
 char auth[] = "4KEQt6TstCkNDUeNPmI8Z834CSjNzlPc";
-
 char ssid[] = "Thanyakorn_3BB";
 char pass[] = "0962539503";
-
-
 
 #include <SoftwareSerial.h>
 SoftwareSerial EspSerial(3, 2); // RX, TX
 
-#define ESP8266_BAUD 38400
+#define ESP8266_BAUD 96000
 ESP8266 wifi(&EspSerial);
 
 WidgetTerminal Terminal(V0);

@@ -11,15 +11,16 @@ void setup(){
 
 void loop(){
 
-  Moisture = analogRead(analogInPin);
-  outputValue = map(Moisture, 0, 1023, 100, 0); //คิดเป็น %
+  
 
+Moisture = analogRead(analogInPin);
 
   Serial.print("Moisture = ");
-  Serial.print(outputValue);
+  Serial.print(Moisture);
   Serial.println(" %");
 
   delay(1000);
+
 
 
 
