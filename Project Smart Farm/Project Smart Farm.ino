@@ -15,6 +15,7 @@ const int analogInPin = A0; //ประกาศขา
 const int Detection = A1;
 
 const int relay = 13;  //ขา Relay
+const int LED = 12;  //ขา LED
 
 
 
@@ -29,6 +30,7 @@ void setup(){
   Serial.begin(9600);
 
   pinMode(relay, OUTPUT);
+  pinMode(LED, OUTPUT);
   oled.begin(0x3C); // Address 0x3C for 128x32
   oled.clearDisplay();
 
@@ -55,6 +57,15 @@ void loop(){
   else {
     digitalWrite(relay, LOW);      //จะหยุดเมื่อน้อยกว่า 50 
   }
+
+  if (outputValu > 30) {         //ตั้งค่า % ที่ต้องการจะรดน้ำต้นไม้
+    digitalWrite(LED, HIGH);
+  }
+
+  else {
+    digitalWrite(LED, LOW);      //จะหยุดเมื่อน้อยกว่า 50 
+  }
+
 
 
   oled.clearDisplay();
